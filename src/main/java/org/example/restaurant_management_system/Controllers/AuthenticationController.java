@@ -1,4 +1,5 @@
 package org.example.restaurant_management_system.Controllers;
+import com.almasb.fxgl.net.Connection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
+import java.sql.PreparedStatement;
 
 public class AuthenticationController  {
         @FXML
@@ -59,6 +62,14 @@ public class AuthenticationController  {
 //                // Pre-fill the TextField with an email address
 //                login_username.setText("username");
 //        }
+
+
+        private Connection connect;
+        private PreparedStatement prepare;
+        private ResultSet result;
+
+
+
         Stage stage1 = new Stage();
         Stage stage2 = new Stage();
         public void handleEvent(ActionEvent event) throws IOException {
@@ -95,7 +106,7 @@ public class AuthenticationController  {
 
         }
 
-        }
+}
 
 
 
