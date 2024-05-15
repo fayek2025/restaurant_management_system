@@ -131,7 +131,16 @@ public class AuthenticationController  {
 
         }
 
+        public void transitiontomainForm(ActionEvent event) throws IOException {
+                Stage dialogStage;
+                Node node = (Node) event.getSource();
+                dialogStage = (Stage) node.getScene().getWindow();
+                dialogStage.close();
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/mainform2.fxml")));
+                dialogStage.setScene(scene);
+                dialogStage.show();
 
+        }
 
 
 

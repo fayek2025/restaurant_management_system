@@ -33,6 +33,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.example.restaurant_management_system.Model.Data;
+import org.example.restaurant_management_system.Model.Database;
 
 /**
  *
@@ -41,85 +43,85 @@ import javafx.util.Duration;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private AnchorPane si_loginForm;
+    public AnchorPane si_loginForm;
 
     @FXML
-    private TextField si_username;
+    public TextField si_username;
 
     @FXML
-    private PasswordField si_password;
+    public PasswordField si_password;
 
     @FXML
-    private Button si_loginBtn;
+    public Button si_loginBtn;
 
     @FXML
-    private Hyperlink si_forgotPass;
+    public Hyperlink si_forgotPass;
 
     @FXML
-    private AnchorPane su_signupForm;
+    public AnchorPane su_signupForm;
 
     @FXML
-    private TextField su_username;
+    public TextField su_username;
 
     @FXML
-    private PasswordField su_password;
+    public PasswordField su_password;
 
     @FXML
-    private ComboBox<?> su_question;
+    public ComboBox<?> su_question;
 
     @FXML
-    private TextField su_answer;
+    public TextField su_answer;
 
     @FXML
-    private Button su_signupBtn;
+    public Button su_signupBtn;
 
     @FXML
-    private TextField fp_username;
+    public TextField fp_username;
 
     @FXML
-    private AnchorPane fp_questionForm;
+    public AnchorPane fp_questionForm;
 
     @FXML
-    private Button fp_proceedBtn;
+    public Button fp_proceedBtn;
 
     @FXML
-    private ComboBox<?> fp_question;
+    public ComboBox<?> fp_question;
 
     @FXML
-    private TextField fp_answer;
+    public TextField fp_answer;
 
     @FXML
-    private Button fp_back;
+    public Button fp_back;
 
     @FXML
-    private AnchorPane np_newPassForm;
+    public AnchorPane np_newPassForm;
 
     @FXML
-    private PasswordField np_newPassword;
+    public PasswordField np_newPassword;
 
     @FXML
-    private PasswordField np_confirmPassword;
+    public PasswordField np_confirmPassword;
 
     @FXML
-    private Button np_changePassBtn;
+    public Button np_changePassBtn;
 
     @FXML
-    private Button np_back;
+    public Button np_back;
 
     @FXML
-    private AnchorPane side_form;
+    public AnchorPane side_form;
 
     @FXML
-    private Button side_CreateBtn;
+    public Button side_CreateBtn;
 
     @FXML
-    private Button side_alreadyHave;
+    public Button side_alreadyHave;
 
-    private Connection connect;
-    private PreparedStatement prepare;
-    private ResultSet result;
+    public Connection connect;
+    public PreparedStatement prepare;
+    public ResultSet result;
 
-    private Alert alert;
+    public Alert alert;
 
     public void loginBtn() {
 
@@ -133,7 +135,7 @@ public class FXMLDocumentController implements Initializable {
 
             String selctData = "SELECT username, password FROM employee WHERE username = ? and password = ?";
 
-            connect = database.connectDB();
+            connect = (Connection)  Database.connectDB();
 
             try {
 
@@ -145,7 +147,7 @@ public class FXMLDocumentController implements Initializable {
                 // IF SUCCESSFULLY LOGIN, THEN PROCEED TO ANOTHER FORM WHICH IS OUR MAIN FORM 
                 if (result.next()) {
                     // TO GET THE USERNAME THAT USER USED
-                    data.username = si_username.getText();
+                    Data.username = si_username.getText();
 
                     alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Information Message");
@@ -198,7 +200,7 @@ public class FXMLDocumentController implements Initializable {
 
             String regData = "INSERT INTO employee (username, password, question, answer, date) "
                     + "VALUES(?,?,?,?,?)";
-            connect = database.connectDB();
+            connect = (Connection) Database.connectDB();
 
             try {
                 // CHECK IF THE USERNAME IS ALREADY RECORDED
@@ -298,7 +300,7 @@ public class FXMLDocumentController implements Initializable {
         } else {
 
             String selectData = "SELECT username, question, answer FROM employee WHERE username = ? AND question = ? AND answer = ?";
-            connect = database.connectDB();
+            connect = (Connection) Database.connectDB();
 
             try {
 
@@ -342,7 +344,7 @@ public class FXMLDocumentController implements Initializable {
                 String getDate = "SELECT date FROM employee WHERE username = '"
                         + fp_username.getText() + "'";
 
-                connect = database.connectDB();
+                connect = (Connection) Database.connectDB();
 
                 try {
 
