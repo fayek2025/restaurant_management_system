@@ -56,6 +56,10 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.example.restaurant_management_system.Model.CuisineData;
+import org.example.restaurant_management_system.Model.CustomerData;
+import org.example.restaurant_management_system.Model.Data;
+import org.example.restaurant_management_system.Model.Database;
 
 /**
  *
@@ -88,28 +92,28 @@ public class mainFormController implements Initializable {
     private AnchorPane inventory_form;
 
     @FXML
-    private TableView<productData> inventory_tableView;
+    private TableView<CuisineData> inventory_tableView;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_productID;
+    private TableColumn<CuisineData, String> inventory_col_productID;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_productName;
+    private TableColumn<CuisineData, String> inventory_col_productName;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_type;
+    private TableColumn<CuisineData, String> inventory_col_type;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_stock;
+    private TableColumn<CuisineData, String> inventory_col_stock;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_price;
+    private TableColumn<CuisineData, String> inventory_col_price;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_status;
+    private TableColumn<CuisineData, String> inventory_col_status;
 
     @FXML
-    private TableColumn<productData, String> inventory_col_date;
+    private TableColumn<CuisineData, String> inventory_col_date;
 
     @FXML
     private ImageView inventory_imageView;
@@ -157,16 +161,16 @@ public class mainFormController implements Initializable {
     private GridPane menu_gridPane;
 
     @FXML
-    private TableView<productData> menu_tableView;
+    private TableView<CuisineData> menu_tableView;
 
     @FXML
-    private TableColumn<productData, String> menu_col_productName;
+    private TableColumn<CuisineData, String> menu_col_productName;
 
     @FXML
-    private TableColumn<productData, String> menu_col_quantity;
+    private TableColumn<CuisineData, String> menu_col_quantity;
 
     @FXML
-    private TableColumn<productData, String> menu_col_price;
+    private TableColumn<CuisineData, String> menu_col_price;
 
     @FXML
     private Label menu_total;
@@ -193,19 +197,19 @@ public class mainFormController implements Initializable {
     private AnchorPane customers_form;
 
     @FXML
-    private TableView<customersData> customers_tableView;
+    private TableView<CustomerData> customers_tableView;
 
     @FXML
-    private TableColumn<customersData, String> customers_col_customerID;
+    private TableColumn<CustomerData, String> customers_col_customerID;
 
     @FXML
-    private TableColumn<customersData, String> customers_col_total;
+    private TableColumn<CustomerData, String> customers_col_total;
 
     @FXML
-    private TableColumn<customersData, String> customers_col_date;
+    private TableColumn<CustomerData, String> customers_col_date;
 
     @FXML
-    private TableColumn<customersData, String> customers_col_cashier;
+    private TableColumn<CustomerData, String> customers_col_cashier;
 
     @FXML
     private Label dashboard_NC;
@@ -234,12 +238,12 @@ public class mainFormController implements Initializable {
 
     private Image image;
 
-    private ObservableList<productData> cardListData = FXCollections.observableArrayList();
+    private ObservableList<CuisineData> cardListData = FXCollections.observableArrayList();
 
     public void dashboardDisplayNC() {
 
         String sql = "SELECT COUNT(id) FROM receipt";
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
             int nc = 0;
@@ -263,7 +267,7 @@ public class mainFormController implements Initializable {
         String sql = "SELECT SUM(total) FROM receipt WHERE date = '"
                 + sqlDate + "'";
 
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
             double ti = 0;
@@ -284,7 +288,7 @@ public class mainFormController implements Initializable {
     public void dashboardTotalI() {
         String sql = "SELECT SUM(total) FROM receipt";
 
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
             float ti = 0;
@@ -305,7 +309,7 @@ public class mainFormController implements Initializable {
 
         String sql = "SELECT COUNT(quantity) FROM customer";
 
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
             int q = 0;
@@ -326,7 +330,7 @@ public class mainFormController implements Initializable {
         dashboard_incomeChart.getData().clear();
 
         String sql = "SELECT date, SUM(total) FROM receipt GROUP BY date ORDER BY TIMESTAMP(date)";
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
         XYChart.Series chart = new XYChart.Series();
         try {
             prepare = connect.prepareStatement(sql);
@@ -347,7 +351,7 @@ public class mainFormController implements Initializable {
         dashboard_CustomerChart.getData().clear();
 
         String sql = "SELECT date, COUNT(id) FROM receipt GROUP BY date ORDER BY TIMESTAMP(date)";
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
         XYChart.Series chart = new XYChart.Series();
         try {
             prepare = connect.prepareStatement(sql);
@@ -372,7 +376,7 @@ public class mainFormController implements Initializable {
                 || inventory_stock.getText().isEmpty()
                 || inventory_price.getText().isEmpty()
                 || inventory_status.getSelectionModel().getSelectedItem() == null
-                || data.path == null) {
+                || Data.path == null) {
 
             alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Message");
@@ -386,7 +390,7 @@ public class mainFormController implements Initializable {
             String checkProdID = "SELECT prod_id FROM product WHERE prod_id = '"
                     + inventory_productID.getText() + "'";
 
-            connect = database.connectDB();
+            connect = (Connection) Database.connectDB();
 
             try {
 
@@ -412,7 +416,7 @@ public class mainFormController implements Initializable {
                     prepare.setString(5, inventory_price.getText());
                     prepare.setString(6, (String) inventory_status.getSelectionModel().getSelectedItem());
 
-                    String path = data.path;
+                    String path = Data.path;
                     path = path.replace("\\", "\\\\");
 
                     prepare.setString(7, path);
@@ -449,7 +453,7 @@ public class mainFormController implements Initializable {
                 || inventory_stock.getText().isEmpty()
                 || inventory_price.getText().isEmpty()
                 || inventory_status.getSelectionModel().getSelectedItem() == null
-                || data.path == null || data.id == 0) {
+                || Data.path == null || Data.id == 0) {
 
             alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Message");
@@ -459,7 +463,7 @@ public class mainFormController implements Initializable {
 
         } else {
 
-            String path = data.path;
+            String path = Data.path;
             path = path.replace("\\", "\\\\");
 
             String updateData = "UPDATE product SET "
@@ -470,9 +474,9 @@ public class mainFormController implements Initializable {
                     + inventory_price.getText() + "', status = '"
                     + inventory_status.getSelectionModel().getSelectedItem() + "', image = '"
                     + path + "', date = '"
-                    + data.date + "' WHERE id = " + data.id;
+                    + Data.date + "' WHERE id = " + Data.id;
 
-            connect = database.connectDB();
+            connect = (Connection) Database.connectDB();
 
             try {
 
@@ -510,7 +514,7 @@ public class mainFormController implements Initializable {
     }
 
     public void inventoryDeleteBtn() {
-        if (data.id == 0) {
+        if (Data.id == 0) {
 
             alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error Message");
@@ -526,7 +530,7 @@ public class mainFormController implements Initializable {
             Optional<ButtonType> option = alert.showAndWait();
 
             if (option.get().equals(ButtonType.OK)) {
-                String deleteData = "DELETE FROM product WHERE id = " + data.id;
+                String deleteData = "DELETE FROM product WHERE id = " + Data.id;
                 try {
                     prepare = connect.prepareStatement(deleteData);
                     prepare.executeUpdate();
@@ -563,8 +567,8 @@ public class mainFormController implements Initializable {
         inventory_stock.setText("");
         inventory_price.setText("");
         inventory_status.getSelectionModel().clearSelection();
-        data.path = "";
-        data.id = 0;
+        Data.path = "";
+        Data.id = 0;
         inventory_imageView.setImage(null);
 
     }
@@ -579,7 +583,7 @@ public class mainFormController implements Initializable {
 
         if (file != null) {
 
-            data.path = file.getAbsolutePath();
+            Data.path = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 120, 127, false, true);
 
             inventory_imageView.setImage(image);
@@ -587,24 +591,24 @@ public class mainFormController implements Initializable {
     }
 
     // MERGE ALL DATAS
-    public ObservableList<productData> inventoryDataList() {
+    public ObservableList<CuisineData> inventoryDataList() {
 
-        ObservableList<productData> listData = FXCollections.observableArrayList();
+        ObservableList<CuisineData> listData = FXCollections.observableArrayList();
 
         String sql = "SELECT * FROM product";
 
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
 
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            productData prodData;
+            CuisineData prodData;
 
             while (result.next()) {
 
-                prodData = new productData(result.getInt("id"),
+                prodData = new CuisineData(result.getInt("id"),
                         result.getString("prod_id"),
                         result.getString("prod_name"),
                         result.getString("type"),
@@ -625,7 +629,7 @@ public class mainFormController implements Initializable {
     }
 
     // TO SHOW DATA ON OUR TABLE
-    private ObservableList<productData> inventoryListData;
+    private ObservableList<CuisineData> inventoryListData;
 
     public void inventoryShowData() {
         inventoryListData = inventoryDataList();
@@ -644,23 +648,23 @@ public class mainFormController implements Initializable {
 
     public void inventorySelectData() {
 
-        productData prodData = inventory_tableView.getSelectionModel().getSelectedItem();
+        CuisineData prodData = inventory_tableView.getSelectionModel().getSelectedItem();
         int num = inventory_tableView.getSelectionModel().getSelectedIndex();
 
         if ((num - 1) < -1) {
             return;
         }
 
-        inventory_productID.setText(prodData.getProductId());
-        inventory_productName.setText(prodData.getProductName());
+        inventory_productID.setText(prodData.getCuisineId());
+        inventory_productName.setText(prodData.getCuisineName());
         inventory_stock.setText(String.valueOf(prodData.getStock()));
         inventory_price.setText(String.valueOf(prodData.getPrice()));
 
-        data.path = prodData.getImage();
+        Data.path = prodData.getImage();
 
         String path = "File:" + prodData.getImage();
-        data.date = String.valueOf(prodData.getDate());
-        data.id = prodData.getId();
+        Data.date = String.valueOf(prodData.getDate());
+        Data.id = prodData.getId();
 
         image = new Image(path, 120, 127, false, true);
         inventory_imageView.setImage(image);
@@ -695,21 +699,21 @@ public class mainFormController implements Initializable {
 
     }
 
-    public ObservableList<productData> menuGetData() {
+    public ObservableList<CuisineData> menuGetData() {
 
         String sql = "SELECT * FROM product";
 
-        ObservableList<productData> listData = FXCollections.observableArrayList();
-        connect = database.connectDB();
+        ObservableList<CuisineData> listData = FXCollections.observableArrayList();
+        connect = (Connection) Database.connectDB();
 
         try {
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            productData prod;
+            CuisineData prod;
 
             while (result.next()) {
-                prod = new productData(result.getInt("id"),
+                prod = new CuisineData(result.getInt("id"),
                         result.getString("prod_id"),
                         result.getString("prod_name"),
                         result.getString("type"),
@@ -764,23 +768,23 @@ public class mainFormController implements Initializable {
         }
     }
 
-    public ObservableList<productData> menuGetOrder() {
+    public ObservableList<CuisineData> menuGetOrder() {
         customerID();
-        ObservableList<productData> listData = FXCollections.observableArrayList();
+        ObservableList<CuisineData> listData = FXCollections.observableArrayList();
 
         String sql = "SELECT * FROM customer WHERE customer_id = " + cID;
 
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
 
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
 
-            productData prod;
+            CuisineData prod;
 
             while (result.next()) {
-                prod = new productData(result.getInt("id"),
+                prod = new CuisineData(result.getInt("id"),
                         result.getString("prod_id"),
                         result.getString("prod_name"),
                         result.getString("type"),
@@ -798,7 +802,7 @@ public class mainFormController implements Initializable {
         return listData;
     }
 
-    private ObservableList<productData> menuOrderListData;
+    private ObservableList<CuisineData> menuOrderListData;
 
     public void menuShowOrderData() {
         menuOrderListData = menuGetOrder();
@@ -812,7 +816,7 @@ public class mainFormController implements Initializable {
     private int getid;
 
     public void menuSelectOrder() {
-        productData prod = menu_tableView.getSelectionModel().getSelectedItem();
+        CuisineData prod = menu_tableView.getSelectionModel().getSelectedItem();
         int num = menu_tableView.getSelectionModel().getSelectedIndex();
 
         if ((num - 1) < -1) {
@@ -829,7 +833,7 @@ public class mainFormController implements Initializable {
         customerID();
         String total = "SELECT SUM(price) FROM customer WHERE customer_id = " + cID;
 
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
 
@@ -886,7 +890,7 @@ public class mainFormController implements Initializable {
             String insertPay = "INSERT INTO receipt (customer_id, total, date, em_username) "
                     + "VALUES(?,?,?,?)";
 
-            connect = database.connectDB();
+            connect = (Connection) Database.connectDB();
 
             try {
 
@@ -914,7 +918,7 @@ public class mainFormController implements Initializable {
                         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
                         prepare.setString(3, String.valueOf(sqlDate));
-                        prepare.setString(4, data.username);
+                        prepare.setString(4, Data.username);
 
                         prepare.executeUpdate();
 
@@ -952,7 +956,7 @@ public class mainFormController implements Initializable {
             alert.showAndWait();
         } else {
             String deleteData = "DELETE FROM customer WHERE id = " + getid;
-            connect = database.connectDB();
+            connect = (Connection) Database.connectDB();
             try {
                 alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation Message");
@@ -1016,7 +1020,7 @@ public class mainFormController implements Initializable {
     public void customerID() {
 
         String sql = "SELECT MAX(customer_id) FROM customer";
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
             prepare = connect.prepareStatement(sql);
@@ -1040,27 +1044,27 @@ public class mainFormController implements Initializable {
                 cID += 1;
             }
 
-            data.cID = cID;
+            Data.cID = cID;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public ObservableList<customersData> customersDataList() {
+    public ObservableList<CustomerData> customersDataList() {
 
-        ObservableList<customersData> listData = FXCollections.observableArrayList();
+        ObservableList<CustomerData> listData = FXCollections.observableArrayList();
         String sql = "SELECT * FROM receipt";
-        connect = database.connectDB();
+        connect = (Connection) Database.connectDB();
 
         try {
 
             prepare = connect.prepareStatement(sql);
             result = prepare.executeQuery();
-            customersData cData;
+            CustomerData cData;
 
             while (result.next()) {
-                cData = new customersData(result.getInt("id"),
+                cData = new CustomerData(result.getInt("id"),
                         result.getInt("customer_id"),
                         result.getDouble("total"),
                         result.getDate("date"),
@@ -1075,7 +1079,7 @@ public class mainFormController implements Initializable {
         return listData;
     }
 
-    private ObservableList<customersData> customersListData;
+    private ObservableList<CustomerData> customersListData;
 
     public void customersShowData() {
         customersListData = customersDataList();
@@ -1169,7 +1173,7 @@ public class mainFormController implements Initializable {
 
     public void displayUsername() {
 
-        String user = data.username;
+        String user = Data.username;
         user = user.substring(0, 1).toUpperCase() + user.substring(1);
 
         username.setText(user);

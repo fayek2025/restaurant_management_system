@@ -1,5 +1,6 @@
 package org.example.restaurant_management_system.Controllers;
-import com.almasb.fxgl.net.Connection;
+//import com.almasb.fxgl.net.Connection;
+import javafx.scene.control.Alert;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,9 +16,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 import java.sql.PreparedStatement;
+
 
 public class AuthenticationController  {
         @FXML
@@ -106,7 +111,6 @@ public class AuthenticationController  {
 
         }
 
+
+
 }
-
-
-

@@ -11,7 +11,7 @@ public class Database {
     public static Connection connectDB(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connect = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/mydatabase", "root", "sudodatabase");
+            Connection connect = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3307/", "root", "");
             return connect;
         }catch(Exception e){
             e.printStackTrace();

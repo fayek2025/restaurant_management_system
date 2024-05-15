@@ -11,6 +11,7 @@ module org.example.restaurant_management_system {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires jasperreports;
 
     opens org.example.restaurant_management_system to javafx.fxml;
     exports org.example.restaurant_management_system;
