@@ -12,13 +12,13 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="image-background" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0" styleClass="login-form" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane prefHeight="500.0" prefWidth="400.0" styleClass="image-background" />
+            <AnchorPane layoutX="400.0" prefHeight="500.0" prefWidth="400.0" styleClass="login-form">
                <children>
                   <Label layoutX="54.0" layoutY="54.0" prefHeight="39.0" prefWidth="123.0" styleClass="text1" text="Log In" />
-                  <TextField fx:id="login_username" layoutX="54.0" layoutY="139.0" prefHeight="45.0" prefWidth="309.0" styleClass="input-fields" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="37.0" />
-                  <PasswordField fx:id="login_pass" layoutX="54.0" layoutY="205.0" prefHeight="45.0" prefWidth="309.0" promptText="Password" styleClass="input-fields" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="37.0" />
-                  <Button fx:id="login_btn" layoutX="59.0" layoutY="304.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="281.0" styleClass="btn" text="Login" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="41.0" />
+                  <TextField fx:id="login_username" layoutX="54.0" layoutY="139.0" prefHeight="45.0" prefWidth="309.0" styleClass="input-fields" />
+                  <PasswordField fx:id="login_pass" layoutX="54.0" layoutY="205.0" prefHeight="45.0" prefWidth="309.0" promptText="Password" styleClass="input-fields" />
+                  <Button fx:id="login_btn" layoutX="59.0" layoutY="304.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="281.0" styleClass="btn" text="Login" />
                   <Label layoutX="85.0" layoutY="365.0" text="Don't have an account?" textFill="#7c7979">
                      <font>
                         <Font name="Arial" size="15.0" />
