@@ -1,10 +1,6 @@
 package org.example.restaurant_management_system.Controllers;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Card needed 753 754 lines
 
 
 import java.io.File;
@@ -750,8 +746,8 @@ public class mainFormController implements Initializable {
                 FXMLLoader load = new FXMLLoader();
                 load.setLocation(getClass().getResource("cardProduct.fxml"));
                 AnchorPane pane = load.load();
-                cardProductController cardC = load.getController();
-                cardC.setData(cardListData.get(q));
+                //cardProductController cardC = load.getController();
+                //cardC.setData(cardListData.get(q));
 
                 if (column == 3) {
                     column = 0;

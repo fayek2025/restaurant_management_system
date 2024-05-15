@@ -77,6 +77,26 @@ public class AuthenticationController  {
 
         Stage stage1 = new Stage();
         Stage stage2 = new Stage();
+
+
+//        public void handleEvent(ActionEvent event) throws IOException {
+//                Stage dialogStage;
+//                Node node = (Node) event.getSource();
+//                dialogStage = (Stage) node.getScene().getWindow();
+//                dialogStage.close();
+//
+//                if (event.getSource() == login_signup_btn) {
+//                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/registerview.fxml")));
+//                        dialogStage.setScene(scene);
+//                } else if (event.getSource() == login_btn) {
+//                        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/Loginview.fxml")));
+//                        dialogStage.setScene(scene);
+//                }
+//
+//                dialogStage.show();
+//        }
+
+
         public void handleEvent(ActionEvent event) throws IOException {
                 if(event.getSource() == login_signup_btn)
                 {
@@ -110,6 +130,8 @@ public class AuthenticationController  {
 
 
         }
+
+
 
 
 
