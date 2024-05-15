@@ -13,7 +13,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         try {
             //this.primarystage = stage;
-            FXMLLoader fxmlLoader = new  FXMLLoader(getClass().getResource("/view/Loginview.fxml"));
+            FXMLLoader fxmlLoader = new  FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Restaurant Mangement System");
             //AuthenticationController controller = fxmlLoader.getController();
