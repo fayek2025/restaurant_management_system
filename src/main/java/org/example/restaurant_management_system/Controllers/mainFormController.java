@@ -57,10 +57,7 @@ import org.example.restaurant_management_system.Model.CustomerData;
 import org.example.restaurant_management_system.Model.Data;
 import org.example.restaurant_management_system.Model.Database;
 
-/**
- *
- * @author WINDOWS 10
- */
+
 public class mainFormController implements Initializable {
 
     @FXML
@@ -570,19 +567,36 @@ public class mainFormController implements Initializable {
     }
 
     // LETS MAKE A BEHAVIOR FOR IMPORT BTN FIRST
+//    public void inventoryImportBtn() {
+//
+//        FileChooser openFile = new FileChooser();
+//        //openFile.getExtensionFilters().add(new ExtensionFilter("Open Image File", "*png", "*jpg"));
+//
+//        File file = openFile.showOpenDialog(main_form.getScene().getWindow());
+//
+//        if (file != null) {
+//
+//            Data.path = file.getAbsolutePath();
+//            image = new Image(file.toURI().toString(), 120, 127, false, true);
+//
+//            inventory_imageView.setImage(image);
+//        }
+//    }
+
     public void inventoryImportBtn() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
 
-        FileChooser openFile = new FileChooser();
-        openFile.getExtensionFilters().add(new ExtensionFilter("Open Image File", "*png", "*jpg"));
-
-        File file = openFile.showOpenDialog(main_form.getScene().getWindow());
+        File file = fileChooser.showOpenDialog(new Stage());
 
         if (file != null) {
-
-            Data.path = file.getAbsolutePath();
-            image = new Image(file.toURI().toString(), 120, 127, false, true);
-
+            String imagePath = file.toURI().toString();
+            Image image = new Image(imagePath, 120, 127, false, true);
             inventory_imageView.setImage(image);
+            Data.path = file.getAbsolutePath();
         }
     }
 
