@@ -22,15 +22,21 @@
     -fx-background-radius: 5; /* Thumb border radius */
 }
 .nav-form{
-    -fx-background-color: #e9e8ec;
+    -fx-background-color: #eeefe9;
     -fx-text-alignment: center;
     -fx-border-width: 0 3px 0 0;
     -fx-border-color: #a1a1a1;
 }
+.nav-form2{
+    -fx-background-color: #eeefe9;
+    -fx-text-alignment: center;
+
+    -fx-border-color: transparent;
+}
 .top-card{
     -fx-font-family: "Poppins Black";
     -fx-text-fill: black;
-    -fx-background-color: #f5f5f5;
+    -fx-background-color: #e9e8ec;
     -fx-text-alignment: center;
     -fx-background-radius: 20px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 3 );
@@ -99,7 +105,7 @@
 }
 
 .white-bg{
-    -fx-background-color: #e9e8ec;
+    -fx-background-color: #eeefe9;
 }
 
 .radius{
@@ -115,6 +121,7 @@
     -fx-padding: 0;
     -fx-border-color: transparent;
     -fx-border-radius: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
 
 
 }
@@ -123,25 +130,41 @@
     -fx-background-color: #ffffff;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 9, 0, 0, 0);
 }
+
 .table-view .column-header-background{
     -fx-background-color: #F8A374;
     -fx-background-radius: 0px 0px 0 0;
     -fx-background-insets: 0 0 0 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
 }
 .table-view .column-header, .filter{
     -fx-background-color: transparent;
     -fx-size: 40px;
+
+
 }
 .table-view .column-header .label{
     -fx-text-fill: #fff;
 }
 
 .btn{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
+    -fx-background-color: #F8A374;
     -fx-cursor: hand;
     -fx-text-fill: #fff;
+    -fx-text-alignment: center;
     -fx-font-size: 14px;
+    -fx-background-radius: 5px;
 }
 .btn:hover{
-    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 3 );
+}
+
+.input-fields
+{
+    -fx-font-family: "Poppins Black";
+    -fx-border-style: none; /* Remove border */
+    -fx-border-color: transparent; /* Make border color transparent */
+    -fx-background-color: #fffefe;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
 }

@@ -31,12 +31,12 @@
                             <children>
                                 <AnchorPane layoutX="11.0" layoutY="161.0" prefHeight="600.0" prefWidth="222.0" styleClass="nav-form" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <Label layoutX="8.0" layoutY="112.0" text="Welcome, ">
+                                        <Label layoutX="26.0" layoutY="112.0" text="Welcome, ">
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="username" layoutX="88.0" layoutY="112.0" prefHeight="17.0" prefWidth="126.0" text="MarcoMan">
+                                        <Label fx:id="username" layoutX="116.0" layoutY="112.0" prefHeight="17.0" prefWidth="126.0" text="MarcoMan">
                                             <font>
                                                 <Font size="18.0" />
                                             </font>
@@ -45,20 +45,11 @@
                                         <Button fx:id="inventory_btn" layoutX="39.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../styles/mainFromDesign.css" text="Inventory" />
                                         <Button fx:id="menu_btn" layoutX="37.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../styles/mainFromDesign.css" text="Menu" />
                                         <Button fx:id="customers_btn" layoutX="41.0" layoutY="350.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../styles/mainFromDesign.css" text="Customers" />
-                                        <Button fx:id="logout_btn" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="191.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="14.0">
+                                        <Button fx:id="logout_btn" layoutX="17.0" layoutY="555.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="191.0" styleClass="nav-btn" stylesheets="@../styles/mainFromDesign.css" text="Sign out" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="17.0">
                                             <graphic>
 
                                             </graphic>
-                                            <styleClass>
-                                                <String fx:value="logout" />
-                                                <String fx:value="shadow" />
-                                            </styleClass>
                                         </Button>
-                                        <Label layoutX="84.0" layoutY="565.0" styleClass="text-signout" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="84.0">
-                                            <font>
-                                                <Font size="15.0" />
-                                            </font>
-                                        </Label>
                                     </children>
                                 </AnchorPane>
                             </children>
@@ -70,15 +61,10 @@
                                 <AnchorPane fx:id="dashboard_form" layoutX="196.0" layoutY="185.0" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="169.0" prefWidth="851.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="10.0">
-                                            <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="radius" />
-                                                <String fx:value="shadow" />
-                                            </styleClass>
                                             <children>
                                                 <ScrollPane layoutY="-14.0" prefHeight="200.0" prefWidth="851.0" styleClass="transparent" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-14.0">
                                                     <content>
-                                                        <AnchorPane prefHeight="154.0" prefWidth="1103.0">
+                                                        <AnchorPane prefHeight="154.0" prefWidth="1103.0" styleClass="nav-form2">
                                                             <children>
                                                                 <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="134.0" prefWidth="239.0" styleClass="top-card" stylesheets="@../styles/mainFromDesign.css">
                                                                     <children>
@@ -145,13 +131,12 @@
                                                     </content>
                                                 </ScrollPane>
                                             </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
                                         </AnchorPane>
-                                        <AnchorPane layoutX="14.0" layoutY="206.0" prefHeight="380.0" prefWidth="851.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="206.0">
-                                            <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="radius" />
-                                                <String fx:value="shadow" />
-                                            </styleClass>
+                                        <AnchorPane layoutX="14.0" layoutY="206.0" prefHeight="380.0" prefWidth="851.0" styleClass="white-bg" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="206.0">
                                             <children>
                                                 <AnchorPane layoutX="14.0" layoutY="18.0" prefHeight="344.0" prefWidth="413.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="424.0" AnchorPane.topAnchor="18.0">
                                                     <styleClass>
@@ -192,7 +177,7 @@
                                         <Separator layoutX="14.0" layoutY="193.0" prefHeight="3.0" prefWidth="851.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="193.0" />
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="inventory_form" layoutX="72.0" layoutY="200.0" prefHeight="600.0" prefWidth="878.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="inventory_form" layoutX="72.0" layoutY="200.0" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
                                         <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="286.0" prefWidth="849.0" styleClass="white-bg" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
                                             <children>
@@ -212,25 +197,20 @@
                                                 </TableView>
                                             </children>
                                         </AnchorPane>
-                                        <AnchorPane layoutX="15.0" layoutY="325.0" prefHeight="261.0" prefWidth="849.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
-                                            <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="radius" />
-                                                <String fx:value="shadow" />
-                                            </styleClass>
+                                        <AnchorPane layoutX="15.0" layoutY="325.0" prefHeight="261.0" prefWidth="849.0" styleClass="white-bg" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="14.0">
                                             <children>
                                                 <Label layoutX="56.0" layoutY="30.0" text="Product ID:">
                                                     <font>
                                                         <Font size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField fx:id="inventory_productID" layoutX="134.0" layoutY="28.0" prefHeight="25.0" prefWidth="165.0" />
+                                                <TextField fx:id="inventory_productID" layoutX="134.0" layoutY="28.0" prefHeight="25.0" prefWidth="165.0" styleClass="input-fields" stylesheets="@../styles/mainFromDesign.css" />
                                                 <Label layoutX="32.0" layoutY="70.0" text="Product Name:">
                                                     <font>
                                                         <Font size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField fx:id="inventory_productName" layoutX="134.0" layoutY="67.0" prefHeight="25.0" prefWidth="168.0" />
+                                                <TextField fx:id="inventory_productName" layoutX="134.0" layoutY="67.0" prefHeight="25.0" prefWidth="168.0" styleClass="input-fields" />
                                                 <Label layoutX="91.0" layoutY="110.0" text="Type:">
                                                     <font>
                                                         <Font size="14.0" />
@@ -242,13 +222,13 @@
                                                         <Font size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField fx:id="inventory_stock" layoutX="432.0" layoutY="28.0" prefHeight="25.0" prefWidth="168.0" promptText="0" />
+                                                <TextField fx:id="inventory_stock" layoutX="432.0" layoutY="28.0" prefHeight="25.0" prefWidth="168.0" promptText="0" styleClass="input-fields" />
                                                 <Label layoutX="372.0" layoutY="70.0" text="Price ($):">
                                                     <font>
                                                         <Font size="14.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField fx:id="inventory_price" layoutX="432.0" layoutY="68.0" prefHeight="25.0" prefWidth="168.0" promptText="\$0.0" />
+                                                <TextField fx:id="inventory_price" layoutX="432.0" layoutY="68.0" prefHeight="25.0" prefWidth="168.0" promptText="\$0.0" styleClass="input-fields" />
                                                 <AnchorPane layoutX="700.0" layoutY="26.0" prefHeight="117.0" prefWidth="120.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.rightAnchor="29.0">
                                                     <styleClass>
                                                         <String fx:value="white-bg" />
@@ -259,8 +239,8 @@
                                                     </children>
                                                 </AnchorPane>
                                                 <Button fx:id="inventory_importBtn" layoutX="711.0" layoutY="163.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="99.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Import" AnchorPane.rightAnchor="39.0" />
-                                                <Button fx:id="inventory_addBtn" layoutX="105.0" layoutY="189.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Update" AnchorPane.bottomAnchor="31.0" />
-                                                <Button fx:id="inventory_clearBtn" layoutX="395.0" layoutY="189.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Clear" AnchorPane.bottomAnchor="31.0" />
+                                                <Button fx:id="inventory_addBtn" layoutX="134.0" layoutY="189.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Update" AnchorPane.bottomAnchor="31.0" />
+                                                <Button fx:id="inventory_clearBtn" layoutX="332.0" layoutY="189.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Clear" AnchorPane.bottomAnchor="31.0" />
                                                 <Button fx:id="inventory_deleteBtn" layoutX="528.0" layoutY="189.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Delete" AnchorPane.bottomAnchor="31.0" />
                                                 <Label layoutX="386.0" layoutY="112.0" text="Status:">
                                                     <font>
@@ -279,7 +259,6 @@
                                             <styleClass>
                                                 <String fx:value="white-bg" />
                                                 <String fx:value="shadow" />
-                                                <String fx:value="radius" />
                                             </styleClass>
                                             <children>
                                                 <ScrollPane fx:id="menu_scrollPane" layoutX="13.0" layoutY="14.0" prefHeight="538.0" prefWidth="486.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0">
@@ -293,12 +272,7 @@
                                                 </ScrollPane>
                                             </children>
                                         </AnchorPane>
-                                        <AnchorPane layoutX="544.0" layoutY="17.0" prefHeight="566.0" prefWidth="320.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
-                                            <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="shadow" />
-                                                <String fx:value="radius" />
-                                            </styleClass>
+                                        <AnchorPane layoutX="544.0" layoutY="17.0" prefHeight="566.0" prefWidth="320.0" styleClass="white-bg" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
                                             <children>
                                                 <TableView fx:id="menu_tableView" layoutX="13.0" layoutY="14.0" prefHeight="249.0" prefWidth="295.0" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0">
                                                     <columns>
@@ -340,16 +314,11 @@
                                         </AnchorPane>
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="customers_form" layoutX="114.0" layoutY="128.0" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <AnchorPane fx:id="customers_form" layoutX="114.0" layoutY="128.0" prefHeight="600.0" prefWidth="878.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <children>
-                                        <AnchorPane layoutX="21.0" layoutY="21.0" prefHeight="558.0" prefWidth="836.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="21.0">
-                                            <styleClass>
-                                                <String fx:value="white-bg" />
-                                                <String fx:value="shadow" />
-                                                <String fx:value="radius" />
-                                            </styleClass>
+                                        <AnchorPane layoutX="21.0" layoutY="21.0" prefHeight="558.0" prefWidth="836.0" styleClass="white-bg" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="21.0">
                                             <children>
-                                                <Label layoutX="18.0" layoutY="14.0" text="Customers" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="14.0">
+                                                <Label layoutX="371.0" layoutY="20.0" text="Customers" AnchorPane.leftAnchor="371.0" AnchorPane.topAnchor="20.0">
                                                     <font>
                                                         <Font size="20.0" />
                                                     </font>
