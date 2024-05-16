@@ -64,177 +64,177 @@ import org.example.restaurant_management_system.Model.Database;
 public class mainFormController implements Initializable {
 
     @FXML
-    private AnchorPane main_form;
+    public AnchorPane main_form;
 
     @FXML
-    private Label username;
+    public Label username;
 
     @FXML
-    private Button dashboard_btn;
+    public Button dashboard_btn;
 
     @FXML
-    private Button inventory_btn;
+    public Button inventory_btn;
 
     @FXML
-    private Button menu_btn;
+    public Button menu_btn;
 
     @FXML
-    private Button customers_btn;
+    public Button customers_btn;
 
     @FXML
-    private Button logout_btn;
+    public Button logout_btn;
 
     @FXML
-    private AnchorPane inventory_form;
+    public AnchorPane inventory_form;
 
     @FXML
-    private TableView<CuisineData> inventory_tableView;
+    public TableView<CuisineData> inventory_tableView;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_productID;
+    public TableColumn<CuisineData, String> inventory_col_productID;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_productName;
+    public TableColumn<CuisineData, String> inventory_col_productName;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_type;
+    public TableColumn<CuisineData, String> inventory_col_type;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_stock;
+    public TableColumn<CuisineData, String> inventory_col_stock;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_price;
+    public TableColumn<CuisineData, String> inventory_col_price;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_status;
+    public TableColumn<CuisineData, String> inventory_col_status;
 
     @FXML
-    private TableColumn<CuisineData, String> inventory_col_date;
+    public TableColumn<CuisineData, String> inventory_col_date;
 
     @FXML
-    private ImageView inventory_imageView;
+    public ImageView inventory_imageView;
 
     @FXML
-    private Button inventory_importBtn;
+    public Button inventory_importBtn;
 
     @FXML
-    private Button inventory_addBtn;
+    public Button inventory_addBtn;
 
     @FXML
-    private Button inventory_updateBtn;
+    public Button inventory_updateBtn;
 
     @FXML
-    private Button inventory_clearBtn;
+    public Button inventory_clearBtn;
 
     @FXML
-    private Button inventory_deleteBtn;
+    public Button inventory_deleteBtn;
 
     @FXML
-    private TextField inventory_productID;
+    public TextField inventory_productID;
 
     @FXML
-    private TextField inventory_productName;
+    public TextField inventory_productName;
 
     @FXML
-    private TextField inventory_stock;
+    public TextField inventory_stock;
 
     @FXML
-    private TextField inventory_price;
+    public TextField inventory_price;
 
     @FXML
-    private ComboBox<?> inventory_status;
+    public ComboBox<?> inventory_status;
 
     @FXML
-    private ComboBox<?> inventory_type;
+    public ComboBox<?> inventory_type;
 
     @FXML
-    private AnchorPane menu_form;
+    public AnchorPane menu_form;
 
     @FXML
-    private ScrollPane menu_scrollPane;
+    public ScrollPane menu_scrollPane;
 
     @FXML
-    private GridPane menu_gridPane;
+    public GridPane menu_gridPane;
 
     @FXML
-    private TableView<CuisineData> menu_tableView;
+    public TableView<CuisineData> menu_tableView;
 
     @FXML
-    private TableColumn<CuisineData, String> menu_col_productName;
+    public TableColumn<CuisineData, String> menu_col_productName;
 
     @FXML
-    private TableColumn<CuisineData, String> menu_col_quantity;
+    public TableColumn<CuisineData, String> menu_col_quantity;
 
     @FXML
-    private TableColumn<CuisineData, String> menu_col_price;
+    public TableColumn<CuisineData, String> menu_col_price;
 
     @FXML
-    private Label menu_total;
+    public Label menu_total;
 
     @FXML
-    private TextField menu_amount;
+    public TextField menu_amount;
 
     @FXML
-    private Label menu_change;
+    public Label menu_change;
 
     @FXML
-    private Button menu_payBtn;
+    public Button menu_payBtn;
 
     @FXML
-    private Button menu_removeBtn;
+    public Button menu_removeBtn;
 
     @FXML
-    private Button menu_receiptBtn;
+    public Button menu_receiptBtn;
 
     @FXML
-    private AnchorPane dashboard_form;
+    public AnchorPane dashboard_form;
 
     @FXML
-    private AnchorPane customers_form;
+    public AnchorPane customers_form;
 
     @FXML
-    private TableView<CustomerData> customers_tableView;
+    public TableView<CustomerData> customers_tableView;
 
     @FXML
-    private TableColumn<CustomerData, String> customers_col_customerID;
+    public TableColumn<CustomerData, String> customers_col_customerID;
 
     @FXML
-    private TableColumn<CustomerData, String> customers_col_total;
+    public TableColumn<CustomerData, String> customers_col_total;
 
     @FXML
-    private TableColumn<CustomerData, String> customers_col_date;
+    public TableColumn<CustomerData, String> customers_col_date;
 
     @FXML
-    private TableColumn<CustomerData, String> customers_col_cashier;
+    public TableColumn<CustomerData, String> customers_col_cashier;
 
     @FXML
-    private Label dashboard_NC;
+    public Label dashboard_NC;
 
     @FXML
-    private Label dashboard_TI;
+    public Label dashboard_TI;
 
     @FXML
-    private Label dashboard_TotalI;
+    public Label dashboard_TotalI;
 
     @FXML
-    private Label dashboard_NSP;
+    public Label dashboard_NSP;
 
     @FXML
-    private AreaChart<?, ?> dashboard_incomeChart;
+    public AreaChart<?, ?> dashboard_incomeChart;
 
     @FXML
-    private BarChart<?, ?> dashboard_CustomerChart;
+    public BarChart<?, ?> dashboard_CustomerChart;
 
-    private Alert alert;
+    public Alert alert;
 
-    private Connection connect;
-    private PreparedStatement prepare;
-    private Statement statement;
-    private ResultSet result;
+    public Connection connect;
+    public PreparedStatement prepare;
+    public Statement statement;
+    public ResultSet result;
 
-    private Image image;
+    public Image image;
 
-    private ObservableList<CuisineData> cardListData = FXCollections.observableArrayList();
+    public ObservableList<CuisineData> cardListData = FXCollections.observableArrayList();
 
     public void dashboardDisplayNC() {
 
@@ -1167,9 +1167,11 @@ public class mainFormController implements Initializable {
 
     }
 
+    // RETURNING NULL ISSUE FIX
     public void displayUsername() {
 
-        String user = Data.username;
+        //String user = Data.username;
+        String user = "Admin";
         user = user.substring(0, 1).toUpperCase() + user.substring(1);
 
         username.setText(user);
@@ -1179,7 +1181,7 @@ public class mainFormController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        displayUsername();
+        //displayUsername();
 
         dashboardDisplayNC();
         dashboardDisplayTI();

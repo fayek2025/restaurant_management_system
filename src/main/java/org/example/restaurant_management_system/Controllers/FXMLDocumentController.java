@@ -36,10 +36,7 @@ import javafx.util.Duration;
 import org.example.restaurant_management_system.Model.Data;
 import org.example.restaurant_management_system.Model.Database;
 
-/**
- *
- * @author WINDOWS 10
- */
+
 public class FXMLDocumentController implements Initializable {
 
     @FXML
@@ -156,7 +153,7 @@ public class FXMLDocumentController implements Initializable {
                     alert.showAndWait();
 
                     // LINK YOUR MAIN FORM
-                    Parent root = FXMLLoader.load(getClass().getResource("mainForm2.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/view/mainForm2.fxml"));
 
                     Stage stage = new Stage();
                     Scene scene = new Scene(root);

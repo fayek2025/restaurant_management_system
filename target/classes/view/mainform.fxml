@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.restaurant_management_system.Controllers.mainFormController">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/mainform.css">
          <children>
@@ -254,11 +254,11 @@
                                           <ImageView fx:id="inventory_imageView" fitHeight="127.0" fitWidth="120.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" />
                                        </children>
                                     </AnchorPane>
-                                    <Button fx:id="inventory_importBtn" layoutX="711.0" layoutY="163.0" mnemonicParsing="false" onAction="#inventoryImportBtn" prefHeight="26.0" prefWidth="99.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Import" AnchorPane.rightAnchor="39.0" />
-                                    <Button fx:id="inventory_addBtn" layoutX="105.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryAddBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Add" AnchorPane.bottomAnchor="31.0" />
-                                    <Button fx:id="inventory_updateBtn" layoutX="238.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryUpdateBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Update" AnchorPane.bottomAnchor="31.0" />
-                                    <Button fx:id="inventory_clearBtn" layoutX="395.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryClearBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Clear" AnchorPane.bottomAnchor="31.0" />
-                                    <Button fx:id="inventory_deleteBtn" layoutX="528.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryDeleteBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Delete" AnchorPane.bottomAnchor="31.0" />
+                                    <Button fx:id="inventory_importBtn" layoutX="711.0" layoutY="163.0" mnemonicParsing="false" onAction="#inventoryImportBtn" prefHeight="26.0" prefWidth="99.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Import" AnchorPane.rightAnchor="39.0" />
+                                    <Button fx:id="inventory_addBtn" layoutX="105.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryAddBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Add" AnchorPane.bottomAnchor="31.0" />
+                                    <Button fx:id="inventory_updateBtn" layoutX="238.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryUpdateBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Update" AnchorPane.bottomAnchor="31.0" />
+                                    <Button fx:id="inventory_clearBtn" layoutX="395.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryClearBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Clear" AnchorPane.bottomAnchor="31.0" />
+                                    <Button fx:id="inventory_deleteBtn" layoutX="528.0" layoutY="189.0" mnemonicParsing="false" onAction="#inventoryDeleteBtn" prefHeight="41.0" prefWidth="112.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Delete" AnchorPane.bottomAnchor="31.0" />
                                     <Label layoutX="386.0" layoutY="112.0" text="Status:">
                                        <font>
                                           <Font size="14.0" />
@@ -272,7 +272,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="menu_form" layoutX="113.0" layoutY="181.0" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="566.0" prefWidth="512.0" stylesheets="@mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="352.0" AnchorPane.topAnchor="17.0">
+                              <AnchorPane layoutX="14.0" layoutY="17.0" prefHeight="566.0" prefWidth="512.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="352.0" AnchorPane.topAnchor="17.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
@@ -290,7 +290,7 @@
                                     </ScrollPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="544.0" layoutY="17.0" prefHeight="566.0" prefWidth="320.0" stylesheets="@mainFormDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
+                              <AnchorPane layoutX="544.0" layoutY="17.0" prefHeight="566.0" prefWidth="320.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
@@ -330,16 +330,16 @@
                                           <Font size="15.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="menu_payBtn" layoutX="15.0" layoutY="420.0" mnemonicParsing="false" onAction="#menuPayBtn" prefHeight="41.0" prefWidth="290.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Pay" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-                                    <Button fx:id="menu_removeBtn" layoutX="28.0" layoutY="489.0" mnemonicParsing="false" onAction="#menuRemoveBtn" prefHeight="41.0" prefWidth="119.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Remove" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="28.0" />
-                                    <Button fx:id="menu_receiptBtn" layoutX="173.0" layoutY="489.0" mnemonicParsing="false" onAction="#menuReceiptBtn" prefHeight="41.0" prefWidth="119.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Receipt" AnchorPane.bottomAnchor="36.0" AnchorPane.rightAnchor="28.0" />
+                                    <Button fx:id="menu_payBtn" layoutX="15.0" layoutY="420.0" mnemonicParsing="false" onAction="#menuPayBtn" prefHeight="41.0" prefWidth="290.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Pay" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                                    <Button fx:id="menu_removeBtn" layoutX="28.0" layoutY="489.0" mnemonicParsing="false" onAction="#menuRemoveBtn" prefHeight="41.0" prefWidth="119.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Remove" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="28.0" />
+                                    <Button fx:id="menu_receiptBtn" layoutX="173.0" layoutY="489.0" mnemonicParsing="false" onAction="#menuReceiptBtn" prefHeight="41.0" prefWidth="119.0" styleClass="btn" stylesheets="@../styles/mainFromDesign.css" text="Receipt" AnchorPane.bottomAnchor="36.0" AnchorPane.rightAnchor="28.0" />
                                  </children>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="customers_form" layoutX="114.0" layoutY="128.0" prefHeight="600.0" prefWidth="878.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="21.0" layoutY="21.0" prefHeight="558.0" prefWidth="836.0" stylesheets="@mainFormDesign.css" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="21.0">
+                              <AnchorPane layoutX="21.0" layoutY="21.0" prefHeight="558.0" prefWidth="836.0" stylesheets="@../styles/mainFromDesign.css" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="21.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />

@@ -1,24 +1,85 @@
 .header{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
-    -fx-border-color: #fff;
-    -fx-border-width: 0 0 .8px 0;
+    -fx-background-color: #EFEDED;
+    -fx-text-alignment: center;
+}
+.text
+{
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: black;
+
+}
+.scroll-pane {
+    -fx-background-color: #e6cba0; /* Background color of the scroll pane */
+    -fx-padding: 0; /* Padding inside the scroll pane */
+
+    /* Scrollbar colors */
+    -fx-background: #e0e0e0;
+
 }
 
+.scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #a39595; /* Thumb color */
+    -fx-background-radius: 5; /* Thumb border radius */
+}
 .nav-form{
-    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+    -fx-background-color: #EFEDED;
+    -fx-text-alignment: center;
+}
+.top-card{
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: black;
+    -fx-background-color: #f5f5f5;
+    -fx-text-alignment: center;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 3 );
+    -fx-font-size: 15px;
+
+}
+.top-card:hover
+{
+    -fx-background-color: #F8A374 ;
 }
 
+.top-card-writing
+{
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: black;
+}
+.text-signout
+{
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+}
+
+.text-signout:hover
+{
+    -fx-text-fill: #F8A374 ;
+}
 .nav-btn{
-    -fx-background-color: transparent;
-    -fx-border-color: #fff;
-    -fx-border-width: .4px;
-    -fx-cursor: hand;
-    -fx-text-fill: #fff;
-    -fx-font-size: 14px;
+    -fx-start-margin: 2px;
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: #393838;
+    -fx-background-color: transparent ;
+
+    -fx-pref-height: 5;
+    -fx-alignment: Center;
+    -fx-pref-width: 150;
+    -fx-font-size: 15px;
+    -fx-background-radius: 5px;
 }
 .nav-btn:hover{
-    -fx-background-color: #fff;
-    -fx-text-fill: #000;
+    -fx-start-margin: 2px;
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: white;
+    -fx-background-color: #F8A374 ;
+
+    -fx-pref-height: 5;
+    -fx-alignment: Center;
+    -fx-pref-width: 150;
+    -fx-font-size: 15px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 3 );
 }
 
 .logout{
