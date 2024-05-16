@@ -22,8 +22,10 @@
     -fx-background-radius: 5; /* Thumb border radius */
 }
 .nav-form{
-    -fx-background-color: #EFEDED;
+    -fx-background-color: #e9e8ec;
     -fx-text-alignment: center;
+    -fx-border-width: 0 3px 0 0;
+    -fx-border-color: #a1a1a1;
 }
 .top-card{
     -fx-font-family: "Poppins Black";
@@ -97,7 +99,7 @@
 }
 
 .white-bg{
-    -fx-background-color: #fff;
+    -fx-background-color: #e9e8ec;
 }
 
 .radius{
@@ -111,13 +113,19 @@
 .table-view{
     -fx-background-color: transparent;
     -fx-padding: 0;
-    -fx-border-color: linear-gradient(to bottom right, #0f6789, #286155);
-    -fx-border-radius: 5px;
-    -fx-border-width: 1.5px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 0px;
+
+
+}
+
+.table-row {
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 9, 0, 0, 0);
 }
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
-    -fx-background-radius: 5px 5px 0 0;
+    -fx-background-color: #F8A374;
+    -fx-background-radius: 0px 0px 0 0;
     -fx-background-insets: 0 0 0 0;
 }
 .table-view .column-header, .filter{

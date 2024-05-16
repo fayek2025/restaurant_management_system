@@ -22,6 +22,7 @@
 
 }
 
+
 .login-form
 {
     -fx-background-color: #F5F6F6;
@@ -70,7 +71,7 @@
 
     -fx-pref-height: 5;
     -fx-alignment: Center;
-    -fx-pref-width: 300;
+    -fx-pref-width: 225;
     -fx-font-size: 15px;
     -fx-background-radius: 5px;
 }

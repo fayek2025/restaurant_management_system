@@ -9,7 +9,14 @@ and open the template in the editor.
 */
 
 .gradient{
-    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+
+    -fx-background-image: url("../images/Login_page.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center; /* Center the background image */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Optional: add a drop shadow */
+    -fx-transition: -fx-scale-x 10s, -fx-scale-y 10s;
+    -fx-border-radius: 25%;
 }
 
 .white-form{
@@ -17,26 +24,49 @@ and open the template in the editor.
 }
 
 .head-label{
-    -fx-border-color: #286155;
-    -fx-border-width: 0 0 0 3px;
+    -fx-font-family: "Titan One";
+    -fx-border-color: #5D4FA1;
+    -fx-border-width: 0 0 0 0px;
     -fx-padding: 0 0 0 5px;
+    -fx-text-fill: #5D4FA1;
+
+}
+
+.head-label2{
+    -fx-font-family: "Titan One";
+    -fx-border-color: #5D4FA1;
+    -fx-border-width: 0 0 0 0px;
+    -fx-padding: 0 0 0 5px;
+    -fx-text-fill: white;
+
 }
 
 .login-btn{
-    -fx-background-color: linear-gradient(to bottom right, #098c53, #246861);
-    -fx-background-radius: 5px;
-    -fx-cursor: hand;
-    -fx-text-fill: #fff;
-    -fx-font-size: 14px;
+    -fx-start-margin: 2px;
+    -fx-font-family: "Poppins Black";
+    -fx-text-fill: white;
+    -fx-background-color: #5D4FA1 ;
+
+    -fx-pref-height: 5;
+    -fx-alignment: Center;
+    -fx-pref-width: 225;
+    -fx-font-size: 15px;
+    -fx-background-radius: 5px;;
 }
 .login-btn:hover{
-    -fx-background-color: linear-gradient(to bottom right, #0fb565, #399a8f);
+    -fx-background-color: #453c77;
+
+    -fx-pref-height: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 3 );
 }
 
 .textfield{
-    -fx-background-color: transparent;
-    -fx-border-color: linear-gradient(to bottom right, #0f6789, #286155);
-    -fx-border-width: .5px;
+    -fx-font-family: "Poppins Black";
+    -fx-border-style: none; /* Remove border */
+    -fx-border-color: transparent; /* Make border color transparent */
+    -fx-background-color: #FFE6E6;
+    -fx-background-radius: 10px;
 }
 .textfield:focused{
     -fx-border-width: 1px;
